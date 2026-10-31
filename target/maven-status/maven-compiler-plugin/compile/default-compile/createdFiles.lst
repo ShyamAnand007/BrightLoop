@@ -1,7 +1,6 @@
 com\brightloop\repository\AppUserRepository.class
 com\brightloop\repository\ProductVariantRepository.class
 com\brightloop\model\ProductVariant.class
-com\brightloop\controller\BillingScheduler.class
 com\brightloop\model\Product.class
 com\brightloop\SubscriptionApplication.class
 com\brightloop\config\RoleAccessConfig.class
@@ -12,7 +11,6 @@ com\brightloop\model\Models.class
 com\brightloop\model\Subscription$Status.class
 com\brightloop\model\Invoice$Status.class
 com\brightloop\repository\DiscountRuleRepository.class
-com\brightloop\controller\ApiController.class
 com\brightloop\repository\PaymentRepository.class
 com\brightloop\repository\ProductRepository.class
 com\brightloop\repository\CustomerRepository.class

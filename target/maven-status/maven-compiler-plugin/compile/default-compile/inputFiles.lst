@@ -10,6 +10,7 @@ C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightl
 C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\model\DiscountRule.java
 C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\model\Invoice.java
 C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\model\Models.java
+C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\model\PasswordResetToken.java
 C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\model\Payment.java
 C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\model\Plan.java
 C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\model\Product.java
@@ -19,6 +20,7 @@ C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightl
 C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\repository\CustomerRepository.java
 C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\repository\DiscountRuleRepository.java
 C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\repository\InvoiceRepository.java
+C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\repository\PasswordResetTokenRepository.java
 C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\repository\PaymentRepository.java
 C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\repository\PlanRepository.java
 C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\repository\ProductRepository.java
