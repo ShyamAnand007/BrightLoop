@@ -1,3 +1,0 @@
-package com.brightloop.model;
-import jakarta.persistence.*;import java.math.BigDecimal;import java.time.LocalDate;
-@Entity public class Plan { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) public Long id; @Column(nullable=false) public String name; @Column(name="billing_interval") @Enumerated(EnumType.STRING) public Interval interval=Interval.MONTHLY; public int minimumQuantity=1; public BigDecimal price=BigDecimal.ZERO; public LocalDate availableFrom; public LocalDate availableUntil; public boolean autoClose=true; public boolean allowEarlyClose=true; public boolean allowPause=true; public boolean allowRenew=true; public boolean active=true; public enum Interval{DAILY,WEEKLY,MONTHLY,YEARLY} }
