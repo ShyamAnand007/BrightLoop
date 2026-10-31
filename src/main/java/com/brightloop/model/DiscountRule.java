@@ -1,0 +1,3 @@
+package com.brightloop.model;
+import jakarta.persistence.*;import java.math.BigDecimal;import java.time.LocalDate;
+@Entity public class DiscountRule { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) public Long id; public String name; @Enumerated(EnumType.STRING) public Kind kind=Kind.PERCENTAGE; @Column(name="discount_value") public BigDecimal value=BigDecimal.ZERO; public BigDecimal minimumPurchase=BigDecimal.ZERO; public Integer minimumQuantity=1; public LocalDate startDate; public LocalDate endDate; public Integer usageLimit; public int usedCount=0; public boolean appliesToSubscription=true; @ManyToOne public Product product; public boolean active=true; public enum Kind{FIXED,PERCENTAGE} }
