@@ -23,7 +23,6 @@ com\brightloop\model\Customer.class
 com\brightloop\model\Invoice.class
 com\brightloop\model\AppUser$Role.class
 com\brightloop\model\Plan.class
-com\brightloop\config\RoleAccessConfig$1.class
 com\brightloop\controller\ApiController$1.class
 com\brightloop\model\Subscription.class
 com\brightloop\config\SeedData.class

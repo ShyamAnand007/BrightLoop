@@ -32,7 +32,7 @@ Demo admin (seeded):
 - Email: `admin@brightloop.demo`
 - Password: `Admin@12345`
 
-The UI currently runs in demo mode without a login screen; authentication endpoints are available for integration. The staff-creation endpoint is disabled at the security layer because this starter does not yet implement authenticated admin authorization. Other business APIs are intentionally open for local demonstration only; do not expose this application to the public internet until authentication and role-based authorization are implemented for every business endpoint.
+The browser UI requires a sign-in. API requests use a server-side session and role-based authorization; do not use the seeded demo credentials in a public deployment.
 
 ## MySQL
 Set environment variables before starting:
@@ -56,13 +56,13 @@ Create the `brightloop` database first. JPA creates/updates tables automatically
 - `POST /api/subscriptions/{id}/apply-discount/{discountId}`
 - `GET /api/dashboard/summary`, `GET /api/dashboard/overdue`
 
-## Important hackathon hardening before production
-This is a runnable hackathon MVP, not a production payment processor. Before deployment, enforce authorization with authenticated sessions/JWT on every admin/staff/customer route, implement verified email reset tokens, add invoice PDF/email delivery and tax jurisdiction rules, use database transactions/locking for concurrent billing, add pagination/indexes and tests, and connect a payment gateway in sandbox mode. Staff/admin creation endpoint should be restricted to admin after auth is enabled.
+## Production considerations
+This is a runnable hackathon MVP, not a production payment processor. Before deployment, add verified password-reset flows, rate limiting, invoice PDF/email delivery, jurisdiction-aware tax rules, transaction locking for concurrent billing, pagination and indexes, and a payment gateway in sandbox mode. Use HTTPS and replace all seeded passwords.
 
 
-## Login and role dashboards (updated)
+## Login and role access
 
-The app now opens on an email/password sign-in screen. Authentication uses a server-side HTTP session; protected API routes check the session role.
+The app opens on an email/password sign-in screen. The server checks the session role for API access; navigation is role-specific, and customer invoices, payments, quotations and subscriptions are scoped to the signed-in customer.
 
 Demo accounts (change these passwords before any real deployment):
 
@@ -72,8 +72,10 @@ Demo accounts (change these passwords before any real deployment):
 | Sales | sales@brightloop.demo | Sales@12345 |
 | Customer | customer@brightloop.demo | Customer@12345 |
 
-Admin can access all workspace sections and the Users page (create users and assign roles). Sales can access the sales workspace (subscriptions, customers, invoices, payments and discounts). Customers can see their own subscriptions only. Customer records are linked to login email addresses.
+Admin has access to the full workspace and staff accounts. Sales can work with customers, quotations, subscriptions, invoices and payments, and can select active products/plans and apply eligible discounts. Sales cannot manage staff or global product, plan or discount configuration. Customers can access only their own quotations, subscriptions, invoices, payments and profile. Customer records are linked to login email addresses.
 
-Run from the folder containing `pom.xml` with Java 21 and Maven 3.9+: `mvn clean` then `mvn spring-boot:run`. Open http://localhost:8080. The demo customer will initially have no subscription until an Admin or Sales user creates one for the same customer email.
+Role workspaces are available at `/admin/dashboard`, `/sales/dashboard` and `/customer/dashboard`; accessing a route from another role redirects to that role's dashboard. The existing model treats quotations as subscriptions with `QUOTATION` status. Centralized tax-rule editing and deployment settings are not implemented in this starter; tax is currently stored on each subscription.
+
+Run from the folder containing `pom.xml` with Java 21 and Maven 3.9+: `mvn spring-boot:run`. Open http://localhost:8080. The demo customer will initially have no subscription until an Admin or Sales user creates one for the same customer email. Run `mvn test` to verify role authorization and customer invoice isolation.
 
 Security note: this is a development/demo starter. Use HTTPS, change seeded passwords, add password reset/rate limiting, and review deployment security before exposing it publicly.

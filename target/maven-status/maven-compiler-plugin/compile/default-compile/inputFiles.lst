@@ -3,6 +3,8 @@ C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightl
 C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\config\SeedData.java
 C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\controller\ApiController.java
 C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\controller\ApiExceptionHandler.java
+C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\controller\RoleDataController.java
+C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\controller\UiRouteController.java
 C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\model\AppUser.java
 C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\model\Customer.java
 C:\Users\a007s\Projects\brightloop-subscription-system\src\main\java\com\brightloop\model\DiscountRule.java
